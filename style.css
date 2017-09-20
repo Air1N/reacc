@@ -17,12 +17,6 @@
   top: calc(50% - var(--mainsize) / 2 + 5px);
 }
 
-.mainwows {
-  position: absolute;
-  top: calc(50% - var(--mainsize) / 2);
-  left: calc(35% - var(--mainsize) / 2);
-}
-
 
 .mainangry {
   width: var(--mainsize);
@@ -37,12 +31,6 @@
 
 .angrypos:active {
   top: calc(50% - var(--mainsize) / 2 + 5px);
-}
-
-.mainangrys {
-  position: absolute;
-  top: calc(50% - var(--mainsize) / 2);
-  left: calc(65% - var(--mainsize) / 2);
 }
 
 .mainbutton:active {
