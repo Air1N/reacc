@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var fs = require('fs');
 var port = process.env.PORT || 80;
 var wowclicks = 0;
 var angryclicks = 0;
@@ -28,6 +29,15 @@ io.on('connection', function(socket) {
     socket.on('angryclick', function () {
       angryclicks++;
       console.log("AClicks:" + angryclicks);
+      
+      fs.writeFile(__dirname + '/assets/clicks.txt', "Hey there!", function(err) {
+        if(err) {
+          return console.log(err);
+        }
+
+        console.log("The file was saved!");
+      });
+      
       socket.broadcast.emit('angryclick');
     });
     
