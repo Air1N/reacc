@@ -4,8 +4,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
 var port = process.env.PORT || 80;
-var wowclicks = 0;
-var angryclicks = 0;
 
 var allClients = -1;
 
@@ -15,6 +13,22 @@ app.use('/lib', express.static(__dirname + '/lib'));
 app.use('/', express.static(__dirname + '/'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
+});
+
+var wowclicks = 0;
+var angryclicks = 0;
+
+fs.exists(__dirname + '/assets/clicks.txt', function(exists){
+   if(exists){ // results true
+      fs.readFile(__dirname + '/assets/clicks.txt', {encoding: "utf8"}, function(err, data){
+         if(err){
+            console.log(err);
+         }
+         
+         angryclicks = data[0];
+         wowclicks = data[1];
+      });
+   }
 });
 
 io.on('connection', function(socket) {
