@@ -28,9 +28,8 @@ io.on('connection', function(socket) {
     
     socket.on('angryclick', function () {
       angryclicks++;
-      console.log("AClicks:" + angryclicks);
       
-      fs.writeFile(__dirname + '/assets/clicks.txt', "Hey there!", function(err) {
+      fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks, function(err) {
         if(err) {
           return console.log(err);
         }
@@ -43,7 +42,15 @@ io.on('connection', function(socket) {
     
     socket.on('wowclick', function () {
       wowclicks++;
-      console.log("WClicks:" + wowclicks);
+      
+      fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks, function(err) {
+        if(err) {
+          return console.log(err);
+        }
+
+        console.log("The file was saved!");
+      });
+      
       socket.broadcast.emit('wowclick');
     });
     
