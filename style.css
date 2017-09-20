@@ -2,6 +2,12 @@
   --mainsize: 150px;
 }
 
+p {
+  color: gray;
+  font-family: 'Nunito';
+  font-weight: 900;
+}
+
 .mainwow {
   width: var(--mainsize);
   height: var(--mainsize);
@@ -9,12 +15,18 @@
 
 .wowpos {
   position: absolute;
+  top: calc(25% - var(--mainsize) / 2);
+  left: calc(50% - var(--mainsize) / 2);
+}
+
+.wowposstatic {
+  position: absolute;
   top: calc(50% - var(--mainsize) / 2);
-  left: calc(65% - var(--mainsize) / 2);
+  left: calc(35% - var(--mainsize) / 2);
 }
 
 .wowpos:active {
-  top: calc(50% - var(--mainsize) / 2 + 5px);
+  top: calc(25% - var(--mainsize) / 2 + 5px);
 }
 
 
@@ -25,16 +37,18 @@
 
 .angrypos {
   position: absolute;
+  top: calc(25% - var(--mainsize) / 2);
+  left: calc(50% - var(--mainsize) / 2);
+}
+
+.angryposstatic {
+  position: absolute;
   top: calc(50% - var(--mainsize) / 2);
   left: calc(65% - var(--mainsize) / 2);
 }
 
 .angrypos:active {
-  top: calc(50% - var(--mainsize) / 2 + 5px);
-}
-
-.mainbutton:active {
-  top: calc(50% - var(--mainsize) / 2 + 5px);
+  top: calc(25% - var(--mainsize) / 2 + 5px);
 }
 
 ::-webkit-scrollbar {

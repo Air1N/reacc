@@ -11,18 +11,27 @@
     <script src="lib/socket.io.js"></script>
     <script src="lib/jquery.js"></script>
     
-    <svg height="250" width="150" class="mainwows">
-      <circle cx="75" cy="90" r="76" fill="black"/>
-    </svg>
+    <div class="wowposstatic">
+      <svg height="250" width="150">
+        <circle cx="75" cy="90" r="76" fill="black"/>
+      </svg>
+      
+      <img id="wowbutton" src="assets/wow.svg" class="mainwow wowpos">
+      <center>
+        <p id="wowtext">0</p>
+      </center>
+    </div>
     
-    <img id="wowbutton" src="assets/wow.svg" class="mainwow">
-    
-    
-    <svg height="250" width="150" class="mainangrys">
-      <circle cx="75" cy="90" r="76" fill="black"/>
-    </svg>
-    
-    <img id="angrybutton" src="assets/angry.svg" class="mainangry">
+    <div class="angryposstatic">
+      <svg height="250" width="150">
+        <circle cx="75" cy="90" r="76" fill="black"/>
+      </svg>
+      
+      <img id="angrybutton" src="assets/angry.svg" class="mainangry angrypos">
+      <center>
+        <p id="angrytext">0</p>
+      </center>
+    </div>
     
     <script src="scripts/ue.js"></script>
     <script src="scripts/controls.js"></script>

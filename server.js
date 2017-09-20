@@ -26,10 +26,12 @@ io.on('connection', function(socket) {
     });
     
     socket.on('angryclick', function () {
+      angryclicks++;
       socket.broadcast.emit('angryclick');
     });
     
     socket.on('wowclick', function () {
+      wowclicks++;
       socket.broadcast.emit('wowclick');
     });
     
