@@ -27,11 +27,13 @@ io.on('connection', function(socket) {
     
     socket.on('angryclick', function () {
       angryclicks++;
+      console.log("AClicks:" + angryclicks);
       socket.broadcast.emit('angryclick');
     });
     
     socket.on('wowclick', function () {
       wowclicks++;
+      console.log("WClicks:" + wowclicks);
       socket.broadcast.emit('wowclick');
     });
     
