@@ -8,9 +8,9 @@ var angryclicks = 0;
 var wowclicks = 0;
 
 function update() {
-  
+  document.getElementById('wowtext').innerHTML = wowclicks;
+  document.getElementById('angrytext').innerHTML = angryclicks;
 }
-
 
 socket.on('userConnect', function(data) {
     console.log(UserID);
@@ -45,11 +45,12 @@ function getCookie(cname) {
 }
 
 wow.onmousedown = function (e) {
+  wowclicks++;
   socket.emit('wowclick');
-  
 };
 
 angry.onmousedown = function (e) {
+  angryclicks++;
   socket.emit('angryclick');
 };
 
