@@ -1,0 +1,87 @@
+:root {
+  --mainsize: 150px;
+}
+
+.mainwow {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2);
+  left: calc(35% - var(--mainsize) / 2);
+  
+  width: var(--mainsize);
+  height: var(--mainsize);
+}
+
+.mainwow:active {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2 + 5px);
+  left: calc(35% - var(--mainsize) / 2);
+  
+  width: var(--mainsize);
+  height: var(--mainsize);
+}
+
+.mainwows {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2);
+  left: calc(35% - var(--mainsize) / 2);
+}
+
+
+.mainangry {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2);
+  left: calc(65% - var(--mainsize) / 2);
+  
+  width: var(--mainsize);
+  height: var(--mainsize);
+}
+
+.mainangry:active {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2 + 5px);
+  left: calc(65% - var(--mainsize) / 2);
+  
+  width: var(--mainsize);
+  height: var(--mainsize);
+}
+
+.mainangrys {
+  position: absolute;
+  top: calc(50% - var(--mainsize) / 2);
+  left: calc(65% - var(--mainsize) / 2);
+}
+
+.mainbutton:active {
+  top: calc(50% - var(--mainsize) / 2 + 5px);
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    padding: -10px;
+}
+
+
+/* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {}
+
+
+/* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+}
+
+
+/* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {}
+
+
+/* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {}
+
+
+/* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
