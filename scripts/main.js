@@ -25,10 +25,6 @@ socket.on('angryclick', function() {
   angryclicks++;
 });
 
-function angClick() {
-  
-}
-
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -46,12 +42,12 @@ function getCookie(cname) {
 
 wow.onmousedown = function (e) {
   wowclicks++;
-  socket.broadcast.emit('wowclick');
+  socket.emit('wowclick', {});
 };
 
 angry.onmousedown = function (e) {
   angryclicks++;
-  socket.broadcast.emit('angryclick');
+  socket.emit('angryclick', {});
 };
 
 setInterval(update, 1000 / 100);
