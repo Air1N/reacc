@@ -46,12 +46,12 @@ function getCookie(cname) {
 
 wow.onmousedown = function (e) {
   wowclicks++;
-  socket.emit('wowclick');
+  socket.broadcast.emit('wowclick');
 };
 
 angry.onmousedown = function (e) {
   angryclicks++;
-  socket.emit('angryclick');
+  socket.broadcast.emit('angryclick');
 };
 
 setInterval(update, 1000 / 100);
