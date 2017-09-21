@@ -20,9 +20,9 @@ socket.on('loadFile', function(data) {
   angryclicks = data[0];
   wowclicks = data[1];
   
-  wowup[0] = data[2];
-  wowup[1] = data[3];
-  wowup[2] = data[4];
+  //wowup[0] = data[2];
+  //wowup[1] = data[3];
+  //wowup[2] = data[4];
   
   update();
 });
