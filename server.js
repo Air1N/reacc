@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 var wowclicks = 0;
 var angryclicks = 0;
 
-var wowup = [0, 0, 0];
+//var wowup = [0, 0, 0];
 
 writeFile();
 
@@ -35,7 +35,7 @@ function loadFiles() {
 }
 
 function writeFile() {
-  fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks + "\n" + wowup[0] + "\n" + wowup[1] + "\n" + wowup[2], function(err) {
+  fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks/* + "\n" + wowup[0] + "\n" + wowup[1] + "\n" + wowup[2]*/, function(err) {
         if(err) {
           return console.log(err);
         }
