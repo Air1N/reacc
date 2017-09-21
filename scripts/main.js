@@ -26,7 +26,9 @@ var wowclicks = 0;
 
 function wowsound() {
   var rand = Math.floor(Math.random() * wowsounds.length);
-  new Audio(wowsounds[rand]).play();
+  var aud = new Audio(wowsounds[rand]);
+  aud.volume = 1;
+  aud.play();
 }
 
 
