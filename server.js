@@ -18,22 +18,20 @@ app.get('/', function(req, res) {
 var wowclicks = 0;
 var angryclicks = 0;
 
-fs.exists(__dirname + '/assets/clicks.txt', function(exists){
-   if(exists){ // results true
-      fs.readFile(__dirname + '/assets/clicks.txt', 'utf8', function(err, data){
-         if(err){
-            console.log(err);
-         }
+function loadFiles() {
+  fs.readFile(__dirname + '/assets/clicks.txt', 'utf8', function(err, data){
+    if(err){
+      console.log(err);
+    }
          
-         console.log(data);
+    data = data.split('\n');
          
-         data = data.split('\n');
-         
-         angryclicks = data[0];
-         wowclicks = data[1];
-      });
-   }
+    angryclicks = data[0];
+    wowclicks = data[1];
+  });
 });
+
+}
 
 io.on('connection', function(socket) {
     allClients++;
