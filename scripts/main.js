@@ -11,10 +11,18 @@ var wowup2 = document.getElementById('wowup2');
 var wowup3 = document.getElementById('wowup3');
 */
 
+var wowsounds = ['assets/wow0.mp3', 'assets/wow1.mp3'];
+
 var angry = document.getElementById('angrybutton');
 
 var angryclicks = 0;
 var wowclicks = 0;
+
+function wowsound() {
+  var rand = Math.floor(Math.random() * wowsounds.length);
+  new Audio(wowsounds[rand]).play();
+}
+
 
 socket.on('loadFile', function(data) {
   angryclicks = data[0];
@@ -47,11 +55,15 @@ socket.on('userConnect', function(data) {
 
 socket.on('wowclick', function() {
   wowclicks++;
+  wowsound();
+  
   update();
 });
 
 socket.on('angryclick', function() {
   angryclicks++;
+  angrysound();
+  
   update();
 });
 
@@ -73,6 +85,7 @@ socket.on('wowup3', function() {
 
 wow.onmousedown = function (e) {
   wowclicks++;
+  wowsound();
   socket.emit('wowclick', {});
   
   update();
@@ -80,6 +93,7 @@ wow.onmousedown = function (e) {
 
 angry.onmousedown = function (e) {
   angryclicks++;
+  angrysound();
   socket.emit('angryclick', {});
   
   update();
