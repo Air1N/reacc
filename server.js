@@ -27,8 +27,8 @@ function loadFiles() {
     console.log(data);
     data = data.split('\n');
     console.log(data);
-    angryclicks = data[0];
-    wowclicks = data[1];
+    angryclicks = eval(data[0]);
+    wowclicks = eval(data[1]);
   });
 }
 
