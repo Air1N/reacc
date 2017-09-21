@@ -11,7 +11,13 @@ var wowup2 = document.getElementById('wowup2');
 var wowup3 = document.getElementById('wowup3');
 */
 
-var wowsounds = ['assets/wow0.mp3', 'assets/wow1.mp3'];
+var wowsounds = [];
+var soundsNum = 5;
+
+
+for (let i = 0; i < soundsNum; i++) {
+  wowsounds.push('assets/wow' + i + '.mp3');
+}
 
 var angry = document.getElementById('angrybutton');
 
