@@ -24,7 +24,6 @@ function loadFiles() {
       console.log(err);
     }
     
-    
     console.log(data);
     data = data.split('\n');
     console.log(data);
@@ -36,6 +35,8 @@ function loadFiles() {
 io.on('connection', function(socket) {
     allClients++;
     var UserID = allClients;
+    
+    loadFiles();
     
     console.log('ID: ' + UserID + ' connected.');
     io.emit('userConnect', {
