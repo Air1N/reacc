@@ -29,8 +29,6 @@ function loadFiles() {
     angryclicks = data[0];
     wowclicks = data[1];
   });
-});
-
 }
 
 io.on('connection', function(socket) {
