@@ -1,5 +1,6 @@
 :root {
   --mainsize: 150px;
+  --upsize: 70px;
 }
 
 p {
@@ -28,6 +29,36 @@ p {
 .wowpos:active {
   top: calc(25% - var(--mainsize) / 2 + 5px);
 }
+
+.wowupgrades {
+  position: absolute;
+  display: inline;
+  top: calc(25% - var(--upsize) / 2);
+  left: calc(10% - var(--upsize) / 2);
+  
+  padding: 0;
+}
+
+.wowupgrade {
+  position: absolute;
+  height: var(--upsize);
+  width: var(--upsize);
+  
+  padding: 0;
+  margin-top: -80px;
+}
+
+
+.wowupgrade:active {
+  position: absolute;
+  height: var(--upsize);
+  width: var(--upsize);
+  
+  padding: 0;
+  margin-top: -78px;
+}
+
+
 
 
 .mainangry {
