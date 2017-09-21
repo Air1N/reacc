@@ -20,9 +20,11 @@ socket.on('loadFile', function(data) {
   angryclicks = data[0];
   wowclicks = data[1];
   
-  //wowup[0] = data[2];
-  //wowup[1] = data[3];
-  //wowup[2] = data[4];
+  /*
+  wowup[0] = data[2];
+  wowup[1] = data[3];
+  wowup[2] = data[4];
+  */
   
   update();
 });
@@ -31,9 +33,11 @@ function update() {
   document.getElementById('wowtext').innerHTML = wowclicks;
   document.getElementById('angrytext').innerHTML = angryclicks;
   
+  /*
   document.getElementById('wowup1text').innerHTML = wowup[0];
   document.getElementById('wowup2text').innerHTML = wowup[1];
   document.getElementById('wowup3text').innerHTML = wowup[2];
+  */
 }
 
 socket.on('userConnect', function(data) {
