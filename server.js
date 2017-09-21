@@ -20,6 +20,8 @@ var angryclicks = 0;
 
 var wowup = [0, 0, 0];
 
+writeFile();
+
 function loadFiles() {
   fs.readFile(__dirname + '/assets/clicks.txt', 'utf8', function(err, data){
     if(err){
