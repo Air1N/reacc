@@ -3,11 +3,13 @@ var UserID = 0;
 
 var wow = document.getElementById('wowbutton');
 
+/*
 var wowup = [0, 0, 0];
 
 var wowup1 = document.getElementById('wowup1');
 var wowup2 = document.getElementById('wowup2');
 var wowup3 = document.getElementById('wowup3');
+*/
 
 var angry = document.getElementById('angrybutton');
 
@@ -49,11 +51,11 @@ socket.on('angryclick', function() {
   update();
 });
 
+/*
 socket.on('wowup1', function() {
   wowup[0]++;
   update();
 });
-
 socket.on('wowup2', function() {
   wowup[1]++;
   update();
@@ -63,6 +65,7 @@ socket.on('wowup3', function() {
   wowup[2]++;
   update();
 });
+*/
 
 wow.onmousedown = function (e) {
   wowclicks++;
@@ -78,6 +81,7 @@ angry.onmousedown = function (e) {
   update();
 };
 
+/*
 wowup1.onmousedown = function () {
   wowup[0]++;
   socket.emit('wowup1', {});
@@ -97,4 +101,4 @@ wowup3.onmousedown = function () {
   socket.emit('wowup3', {});
   
   update();
-};
+};*/
