@@ -7,6 +7,11 @@ var angry = document.getElementById('angrybutton');
 var angryclicks = 0;
 var wowclicks = 0;
 
+socket.on('loadFile', function(data) {
+  angryclicks = data[0];
+  wowclicks = data[1];
+});
+
 function update() {
   document.getElementById('wowtext').innerHTML = wowclicks;
   document.getElementById('angrytext').innerHTML = angryclicks;
