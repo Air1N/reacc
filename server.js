@@ -24,11 +24,9 @@ function loadFiles() {
       console.log(err);
     }
     
-    console.log(data);
     data = data.split('\n');
-    console.log(data);
-    angryclicks = eval(data[0]);
-    wowclicks = eval(data[1]);
+    
+    io.emit('loadFile', data);
   });
 }
 
