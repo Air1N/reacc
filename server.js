@@ -71,6 +71,8 @@ io.on('connection', function(socket) {
       socket.broadcast.emit('wowclick');
     });
     
+    
+    /*
     socket.on('wowup1', function () {
       wowup[0]++;
       
@@ -94,6 +96,7 @@ io.on('connection', function(socket) {
       
       socket.broadcast.emit('wowup3');
     });
+    */
     
     socket.once('disconnect', function() {
         console.log('ID: ' + UserID + ' disconnected.');
