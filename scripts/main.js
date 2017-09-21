@@ -10,6 +10,8 @@ var wowclicks = 0;
 socket.on('loadFile', function(data) {
   angryclicks = data[0];
   wowclicks = data[1];
+  
+  update();
 });
 
 function update() {
@@ -24,35 +26,24 @@ socket.on('userConnect', function(data) {
 
 socket.on('wowclick', function() {
   wowclicks++;
+  update();
 });
 
 socket.on('angryclick', function() {
   angryclicks++;
+  update();
 });
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 
 wow.onmousedown = function (e) {
   wowclicks++;
   socket.emit('wowclick', {});
+  
+  update();
 };
 
 angry.onmousedown = function (e) {
   angryclicks++;
   socket.emit('angryclick', {});
+  
+  update();
 };
-
-setInterval(update, 1000 / 100);
