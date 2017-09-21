@@ -23,9 +23,11 @@ function loadFiles() {
     if(err){
       console.log(err);
     }
-         
+    
+    
+    console.log(data);
     data = data.split('\n');
-         
+    console.log(data);
     angryclicks = data[0];
     wowclicks = data[1];
   });
