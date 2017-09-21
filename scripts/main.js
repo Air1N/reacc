@@ -42,7 +42,7 @@ function wowsound() {
 function angrysound() {
   var rand = Math.floor(Math.random() * angrysounds.length);
   var aud = new Audio(angrysounds[rand]);
-  aud.volume = 1;
+  aud.volume = 0.3;
   aud.play();
 }
 
