@@ -2,6 +2,13 @@ var socket = io();
 var UserID = 0;
 
 var wow = document.getElementById('wowbutton');
+
+var wowup = [0, 0, 0];
+
+var wowup1 = document.getElementById('wowup1');
+var wowup2 = document.getElementById('wowup2');
+var wowup3 = document.getElementById('wowup3');
+
 var angry = document.getElementById('angrybutton');
 
 var angryclicks = 0;
@@ -11,12 +18,20 @@ socket.on('loadFile', function(data) {
   angryclicks = data[0];
   wowclicks = data[1];
   
+  wowup[0] = data[2];
+  wowup[1] = data[3];
+  wowup[2] = data[4];
+  
   update();
 });
 
 function update() {
   document.getElementById('wowtext').innerHTML = wowclicks;
   document.getElementById('angrytext').innerHTML = angryclicks;
+  
+  document.getElementById('wowup1text').innerHTML = wowup[0];
+  document.getElementById('wowup2text').innerHTML = wowup[1];
+  document.getElementById('wowup3text').innerHTML = wowup[2];
 }
 
 socket.on('userConnect', function(data) {
@@ -44,6 +59,27 @@ wow.onmousedown = function (e) {
 angry.onmousedown = function (e) {
   angryclicks++;
   socket.emit('angryclick', {});
+  
+  update();
+};
+
+wowup1.onmousedown = function () {
+  wowup[0]++;
+  socket.emit('wowup1', {});
+  
+  update();
+};
+
+wowup2.onmousedown = function () {
+  wowup[1]++;
+  socket.emit('wowup2', {});
+  
+  update();
+};
+
+wowup3.onmousedown = function () {
+  wowup[2]++;
+  socket.emit('wowup3', {});
   
   update();
 };
