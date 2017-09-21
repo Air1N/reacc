@@ -12,12 +12,20 @@ var wowup3 = document.getElementById('wowup3');
 */
 
 var wowsounds = [];
-var soundsNum = 5;
-
-
-for (let i = 0; i < soundsNum; i++) {
+var wowSoundsNum = 5;
+for (let i = 0; i < wowSoundsNum; i++) {
   wowsounds.push('assets/wow' + i + '.mp3');
 }
+
+var angrysounds = [];
+var angrySoundsNum = 5;
+for (let i = 0; i < angrySoundsNum; i++) {
+  angrysounds.push('assets/angry' + i + '.mp3');
+}
+
+
+
+
 
 var angry = document.getElementById('angrybutton');
 
@@ -27,6 +35,13 @@ var wowclicks = 0;
 function wowsound() {
   var rand = Math.floor(Math.random() * wowsounds.length);
   var aud = new Audio(wowsounds[rand]);
+  aud.volume = 1;
+  aud.play();
+}
+
+function angrysound() {
+  var rand = Math.floor(Math.random() * angrysounds.length);
+  var aud = new Audio(angrysounds[rand]);
   aud.volume = 1;
   aud.play();
 }
