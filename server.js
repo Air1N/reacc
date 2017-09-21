@@ -25,6 +25,8 @@ fs.exists(__dirname + '/assets/clicks.txt', function(exists){
             console.log(err);
          }
          
+         console.log(data);
+         
          angryclicks = data[0];
          wowclicks = data[1];
       });
