@@ -49,6 +49,21 @@ socket.on('angryclick', function() {
   update();
 });
 
+socket.on('wowup1', function() {
+  wowup[0]++;
+  update();
+});
+
+socket.on('wowup2', function() {
+  wowup[1]++;
+  update();
+});
+
+socket.on('wowup3', function() {
+  wowup[2]++;
+  update();
+});
+
 wow.onmousedown = function (e) {
   wowclicks++;
   socket.emit('wowclick', {});
