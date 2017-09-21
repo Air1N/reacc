@@ -18,6 +18,8 @@ app.get('/', function(req, res) {
 var wowclicks = 0;
 var angryclicks = 0;
 
+var wowup = [0, 0, 0];
+
 function loadFiles() {
   fs.readFile(__dirname + '/assets/clicks.txt', 'utf8', function(err, data){
     if(err){
@@ -28,6 +30,16 @@ function loadFiles() {
     
     io.emit('loadFile', data);
   });
+}
+
+function writeFile() {
+  fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks + "\n" + wowup[0] + "\n" + wowup[1] + "\n" + wowup[2], function(err) {
+        if(err) {
+          return console.log(err);
+        }
+
+        console.log("The file was saved!");
+      });
 }
 
 io.on('connection', function(socket) {
@@ -44,13 +56,7 @@ io.on('connection', function(socket) {
     socket.on('angryclick', function () {
       angryclicks++;
       
-      fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks, function(err) {
-        if(err) {
-          return console.log(err);
-        }
-
-        console.log("The file was saved!");
-      });
+      writeFile();
       
       socket.broadcast.emit('angryclick');
     });
@@ -58,15 +64,33 @@ io.on('connection', function(socket) {
     socket.on('wowclick', function () {
       wowclicks++;
       
-      fs.writeFile(__dirname + '/assets/clicks.txt', angryclicks + "\n" + wowclicks, function(err) {
-        if(err) {
-          return console.log(err);
-        }
-
-        console.log("The file was saved!");
-      });
+      writeFile();
       
       socket.broadcast.emit('wowclick');
+    });
+    
+    socket.on('wowup1', function () {
+      wowup[0]++;
+      
+      writeFile();
+      
+      socket.broadcast.emit('wowup1');
+    });
+    
+    socket.on('wowup2', function () {
+      wowup[1]++;
+      
+      writeFile();
+      
+      socket.broadcast.emit('wowup2');
+    });
+    
+    socket.on('wowup3', function () {
+      wowup[2]++;
+      
+      writeFile();
+      
+      socket.broadcast.emit('wowup3');
     });
     
     socket.once('disconnect', function() {
