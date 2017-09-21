@@ -20,7 +20,7 @@ var angryclicks = 0;
 
 fs.exists(__dirname + '/assets/clicks.txt', function(exists){
    if(exists){ // results true
-      fs.readFile(__dirname + '/assets/clicks.txt', {encoding: "utf8"}, function(err, data){
+      fs.readFile(__dirname + '/assets/clicks.txt', function(err, data){
          if(err){
             console.log(err);
          }
